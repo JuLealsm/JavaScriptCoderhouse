@@ -1,0 +1,51 @@
+@mixin size($width, $height, $max-width: null, $max-height: null) {
+    width: $width;
+    height: $height;
+
+    @if $max-width != null {
+        max-width: $max-width;
+    }
+
+    @if $max-height != null {
+        max-height: $max-height;
+    }
+}
+
+@mixin text-style($size, $color: null, $weight: normal, $align: null) {
+    font-size: $size;
+    font-weight: $weight;
+
+    @if $color != null {
+        color: $color;
+    }
+
+    @if $weight != null {
+        font-weight: $weight;
+    }
+    
+    @if $align != null {
+        text-align: $align;
+    }
+}
+
+@mixin transparent-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@mixin flex-layout($direction: null, $justify: null, $align: null) {
+    display: flex;
+
+    @if $direction != null {
+        flex-direction: $direction;
+    }
+
+    @if $justify != null {
+        justify-content: $justify;
+    }
+
+    @if $align != null {
+        align-items: $align;
+    }
+}

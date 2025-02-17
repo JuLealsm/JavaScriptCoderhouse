@@ -1,0 +1,79 @@
+body{
+    height: 100%;
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: $white;
+}
+
+.home-background{
+    @include flex-layout (column, center, center);
+
+}
+
+.home-season-title{
+    @include text-style (50px, $brown, null, center);
+    margin-top: 20px;
+
+    span{
+        font-family: "Pacifico", serif;
+    }
+}
+
+
+.season-plant-card{
+    @include flex-layout(column, center, center);
+    background-color: $darkGreen;
+    @include size (380px, 470px);
+    border-radius: 30px;
+    padding: 40px;
+    margin-top: 50px;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2),  /* Sombra abaixo */
+}
+
+
+.season-plant-cardgrid{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 2fr 1fr; 
+    grid-template-rows: auto auto; 
+
+    h3{
+        @include text-style (null, $white, background-color, center);
+        grid-column: 1 / 2; 
+        grid-row: 1 / 2;    
+    }
+
+    p{
+        font-weight: bold;
+        grid-column: 1 / 2; 
+        grid-row: 2 / 3;    
+    }
+
+    button{
+        grid-column: 2 / 3; 
+        grid-row: 1 / 3; 
+        justify-self: end;
+        @include transparent-button;
+
+        img{
+            @include size (50px, 50px);
+        }
+        
+    }
+}
+
+.season-plant-image{
+    @include size (200px, 250px);
+}
+
+
+/* ################################################ RESPONSIVIDAD para TABLET / PC #######################################################*/
+
+@media screen and (min-width: 800px){
+    .season-plant-panel{
+        @include flex-layout (row, center, center);
+        flex-wrap: wrap; 
+        gap: 10px;
+    }
+        
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Oxanium:wght@200..800&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../scss/styles.css">
+    <link rel="icon"  type="Image/png" href="images/icons/favicon.png">
+    <script defer src="../javascript/main.js"></script>
+    <title>Padres de Planta</title>
+</head>
+<body>
+    <main>
+        <h1>Cada casa tiene su planta ideal. ¿Cuál será la tuya?</h1>
+        <fieldset id="luzSolar" class="quizz-fieldset">
+            <legend>El lugar deseado para colocar la planta recibe cuantas horas de luz del sol directa?</legend>
+            <div class="quizz-options">
+                <div>
+                    <input type="radio" name ="luzSolar" id="solPleno">
+                    <label for="solPleno">8 horas o más
+                        <img class="quizz-image" src="../images/solPleno.png" alt="Al menos 8 horas de sol por día">
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name ="luzSolar" id="sombraParcial">
+                    <label for="sombraParcial">Al menos 4 horas
+                        <img class="quizz-image" src="../images/sombraParcial.png" alt="Hasta 4 horas de sol por día">
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name ="luzSolar" id="sombra">
+                    <label for="sombra">No recibe luz solar
+                        <img class="quizz-image" src="../images/sombra.png" alt="No recibe luz solar directamente">
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset id="tamano" class="quizz-fieldset">
+            <legend>Qué tamaño de planta prefieres?</legend>
+            <div class="quizz-options">
+                <div>
+                    <input type="radio" name ="tamano" id="pequena">
+                    <label for="pequena">Pequena
+                        <img class="quizz-image" src="../images/pequena.png" alt="Pequena">
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name ="tamano" id="grande">
+                    <label for="grande">Grande
+                        <img class="quizz-image" src="../images/grande.png" alt="Grande">
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset id="flores" class="quizz-fieldset">
+            <legend>Te gustaría tener una planta que produzca flores?</legend>
+            <div class="quizz-options">
+                <div>
+                    <input type="radio" name ="flores" id="flores-true">
+                    <label for="flores-true">Con flores
+                        <img class="quizz-image" src="../images/flores-true.png" alt="Planta con flores">
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name ="flores" id="flores-false">
+                    <label for="flores-false">Sin florers
+                        <img class="quizz-image" src="../images/flores-false.png" alt="Planta sin flores">
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset id="toxica" class="quizz-fieldset">
+            <legend>Tienes una mascota que tenga acceso a la planta?</legend>
+            <div class="quizz-options">
+                <div>
+                    <input type="radio" name ="toxica" id="toxica-true">
+                    <label for="toxica-true">No
+                        <img class="quizz-image" src="../images/toxica-true.png" alt="Planta toxica para mascotas">
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name ="toxica" id="toxica-false">
+                    <label for="toxica-false">Si
+                        <img class="quizz-image" src="../images/toxica-false.png" alt="Planta no toxica para mascotas">
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <button id="btn-simular">Ver planta ideal</button>
+        <p id="parrafo-resultado"></p>
+    </main>
+</body>
+</html>

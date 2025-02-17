@@ -1,0 +1,55 @@
+header{
+    background-color: $yellow;
+    border-radius: 0 0 400px 400px;
+    @include flex-layout(column, null center);
+    padding: 15px;
+}
+
+.header-buttons{
+    @include flex-layout (null, space-between, center);
+}
+
+.button-quizz{
+    background-color: $green;
+    padding: 10px;
+    border-radius: 10px;
+    @include text-style (17px, $white);
+    cursor: pointer;
+
+}
+
+.button-login{
+    @include transparent-button;
+
+    img{
+        @include size (50px, 50px);
+    }
+}
+
+.header-title{
+    @include text-style (60px, $brown, null, center);
+    margin: 10px 0 20px 0;
+    span{
+        display: block;
+        line-height: 1;
+    }
+}
+
+.header-title__different-font{
+    font-family: "Pacifico", serif;
+    font-weight: 300;
+}
+
+.header-logo{
+    @include size (400px, 480px);
+    display: block; 
+    margin: 0 auto; 
+    max-width: 100%;
+}
+/* ################################################ RESPONSIVIDAD para TABLET / PC #######################################################*/
+
+@media screen and (min-width: 800px){
+    header{
+        border-radius: 0% 0% 60% 60%;
+    }
+}
