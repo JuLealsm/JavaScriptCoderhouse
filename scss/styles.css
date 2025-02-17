@@ -26,7 +26,7 @@ header {
   align-items: center;
 }
 
-.button-quizz {
+.button-general-green {
   background-color: #5a9c3b;
   padding: 10px;
   border-radius: 10px;
@@ -35,6 +35,10 @@ header {
   color: #F0EADE;
   font-weight: normal;
   cursor: pointer;
+}
+.button-general-green a {
+  text-decoration: none;
+  color: #F0EADE;
 }
 
 .button-login {
@@ -163,11 +167,47 @@ body {
     gap: 10px;
   }
 }
+.quizz-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quizz-title {
+  font-size: 40px;
+  font-weight: 400px;
+  color: #643814;
+  font-weight: 400px;
+  text-align: center;
+  padding: 50px;
+  background-color: #E9A944;
+  border-radius: 0 0 400px 400px;
+}
+.quizz-title span {
+  font-family: "Pacifico", serif;
+  font-weight: normal;
+  color: #68763f;
+}
+
 .quizz-fieldset {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-color: #E2CCB5;
+  border-radius: 30px;
 }
 .quizz-fieldset legend {
-  padding-top: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #A15227;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid #A15227;
+  margin-bottom: 30px;
+  padding: 10px;
 }
 
 .quizz-options {
@@ -175,18 +215,59 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
+  max-height: 100%;
 }
 .quizz-options label {
+  max-width: 330px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #A15227;
+  font-weight: bold;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.quizz-options:has(.quizz-input:checked) .quizz-image {
+  opacity: 0.5;
+}
+
+.quizz-input {
+  display: none;
+}
+.quizz-input:checked + label .quizz-image {
+  opacity: 1 !important;
+  transform: scale(1.1);
+  filter: drop-shadow(10px 10px 10px rgba(125, 93, 50, 0.5));
+}
 
 .quizz-image {
+  cursor: pointer;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
   width: 60%;
   height: 60%;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  margin-top: 10px;
+}
+.quizz-image:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(10px 10px 10px rgba(125, 93, 50, 0.5));
+}
+
+#btn-simular {
+  margin: 10px;
+}
+
+.paragraph-general {
+  font-size: 20px;
+  font-weight: bold;
+  color: #643814;
+  font-weight: bold;
+  text-align: center;
+  padding: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */

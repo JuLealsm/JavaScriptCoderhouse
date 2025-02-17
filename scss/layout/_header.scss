@@ -9,12 +9,17 @@ header{
     @include flex-layout (null, space-between, center);
 }
 
-.button-quizz{
+.button-general-green{
     background-color: $green;
     padding: 10px;
     border-radius: 10px;
     @include text-style (17px, $white);
     cursor: pointer;
+
+    a{
+        text-decoration: none;
+        color: $white;
+    }
 
 }
 
