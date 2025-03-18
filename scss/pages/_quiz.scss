@@ -1,0 +1,85 @@
+
+.quiz-main{
+    @include flex-layout (column, center, center);
+
+}
+
+.quiz-title{
+    @include text-style(40px, $brown, 400px, center);
+    padding: 50px;
+
+
+    span{
+        font-family: "Pacifico", serif;
+        font-weight: normal;
+        color: $darkGreen;
+    }
+}
+.quiz-fieldset{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: $cream;
+    border-radius: 30px;
+
+    legend{
+        @include text-style (20px, $cinnamon, bold, center);
+        border-radius: 10px;
+        background-color: #ffff;
+        border: 1px solid $cinnamon;
+        margin-bottom: 30px;
+        padding: 10px;
+    }
+}
+.quiz-options{
+    @include flex-layout (row, center, center);
+    margin-bottom: 50px;
+    max-height: 100%;
+
+    label{
+        max-width: 330px;
+        @include text-style (15px, $cinnamon, bold, center);
+        @include flex-layout (column, center, center);
+    }
+
+    &:has(.quiz-input:checked) .quiz-image {
+        opacity: 0.5;
+    }
+}
+
+.quiz-input{
+    display: none;
+
+    &:checked + label .quiz-image {
+            opacity: 1 !important;
+            transform: scale(1.1);
+            filter: drop-shadow(10px 10px 10px rgba(125, 93, 50, 0.5));
+        }
+    }
+
+
+.quiz-image{
+    cursor: pointer;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+    @include size (60%, 60%);
+    opacity: 1; 
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+
+    &:hover{
+        transform: scale(1.1);
+        filter: drop-shadow(10px 10px 10px rgba(125, 93, 50, 0.5));
+    }
+}
+
+#btn-simular{
+    margin: 10px;
+
+}
+
+.paragraph-general{
+    @include text-style (20px, $brown, bold, center);
+    padding: 30px;
+
+}
+

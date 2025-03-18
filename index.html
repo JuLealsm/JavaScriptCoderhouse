@@ -7,6 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Oxanium:wght@200..800&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../scss/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="icon"  type="Image/png" href="images/icons/favicon.png">
     <script defer src="javascript/main.js"></script>
     <title>Padres de Planta</title>
@@ -16,10 +19,12 @@
     <header>    
 
         <div class="header-buttons">
-            <button class="button-general-green"><a href="pages/quizz.html">Descubre qué planta es ideal para ti</a></button>
-            <button class="button-login">
-            <img src="images/icons/user-icon.png" alt="icone para loguearse en la pagina" title="Loguearse">
-            </button>
+            <button class="button-general-green"><a href="pages/quiz.html">Descubre qué planta es ideal para ti</a></button>
+            <a href="pages/mi-jardin.html" class="invisible-link">
+                <button class="button-miJardin">
+                    <img src="images/icons/user-icon.png" alt="Acceder a mi jardín" title="Mi Jardín">
+                </button>
+            </a>
         </div>
 
         <div class="header-title-logo">
@@ -28,7 +33,7 @@
                 <span>de</span>
                 <span class="header-title__different-font">Planta</span>
             </h1>
-                <img class="header-logo" src="images/main-pot-plant.png" alt="Ícono de la página Padres de Planta">
+                <img class="header-logo-index" src="images/main-pot-plant.png" alt="Ícono de la página Padres de Planta">
         </div>
 
     </header>
@@ -38,85 +43,9 @@
         <p>Mira cuáles son las estrellas de esta estación!</p>
 
         <div class="season-plant-panel">
-            <div class="season-plant-card">
-                <div class="season-plant-cardgrid">
-                    <h3>Helianthus Annuus</h3>
-                    <p><span>Girasol</span></p>
-                    <button>
-                        <img src="images/icons/add-plant-icon.png" alt="imagen para el botón de añadir planta a mi jardín" title="Haz clic para añadir esta planta a tu jardín.">
-                    </button>
-                </div>
-                
-                <img class="season-plant-image" src="images/girasol.png" alt="Planta de verano: Girasol">
-                <p>El girasol es una flor icónica del verano que sigue la luz del sol. Sus pétalos de color amarillo vibrante y su centro oscuro atraen a polinizadores como abejas y mariposas.</p>
-            </div>
-
-            <div class="season-plant-card">
-                <div class="season-plant-cardgrid">
-                    <h3>Hibiscus rosa-sinensis</h3>
-                    <p><span">Hibisco</span></p>
-                    <button>
-                        <img src="images/icons/add-plant-icon.png" alt="imagen para el botón de añadir planta a mi jardín" title="Haz clic para añadir esta planta a tu jardín.">
-                    </button>
-                </div>
-                
-                <img class="season-plant-image" src="images/hibisco.png" alt="Planta de verano: Hibisco">
-                <p>Arbusto tropical con flores grandes y coloridas que varían entre rojo, rosa, naranja y amarillo. Florece profusamente en verano y es popular en tés y decoraciones.</p>
-            </div>
-
-            <div class="season-plant-card">
-                <div class="season-plant-cardgrid">
-                    <h3>Lavandula angustifolia</h3>
-                    <p><span>Lavanda</span></p>
-                    <button>
-                        <img src="images/icons/add-plant-icon.png" alt="imagen para el botón de añadir planta a mi jardín" title="Haz clic para añadir esta planta a tu jardín.">
-                    </button>
-                </div>
-                
-                <img class="season-plant-image" src="images/lavender.png" alt="Planta de verano: Lavanda">
-                <p>La lavanda exuda un aroma relajante y sus flores lilas florecen en pleno verano. Muy utilizado en aceites esenciales, perfumes y decoración de jardines mediterráneos.</p>
-            </div>
-
-            <div class="season-plant-card">
-                <div class="season-plant-cardgrid">
-                    <h3>Bougainvillea spectabilis</h3>
-                    <p><span class="plant-common-name">Bugambilia</span></p>
-                    <button>
-                        <img src="images/icons/add-plant-icon.png" alt="imagen para el botón de añadir planta a mi jardín" title="Haz clic para añadir esta planta a tu jardín.">
-                    </button>
-                </div>
-                
-                <img class="season-plant-image" src="images/Bugambilia.png" alt="Planta de verano: Bugambilia">
-                <p>Enredadera vibrante que llena paredes y cercas con colores como rosa, morado, naranja y blanco. Soporta bien el calor y aporta un toque tropical a los jardines.</p>
-            </div>
-
-            <div class="season-plant-card">
-                <div class="season-plant-cardgrid">
-                    <h3>Plumeria rubra</h3>
-                    <p><span class="plant-common-name">Flor de Mayo</span></p>
-                    <button>
-                        <img src="images/icons/add-plant-icon.png" alt="imagen para el botón de añadir planta a mi jardín" title="Haz clic para añadir esta planta a tu jardín.">
-                    </button>
-                </div>
-                
-                <img class="season-plant-image" src="images/Flor de Mayo.png
-                " alt="Planta de verano: Flor de Mayo">
-                <p>Sus flores fragantes y cerosas aparecen en verano y son comunes en los leis hawaianos. Sus colores varían entre blanco, rosa y amarillo.</p>
-            </div>
-
-            <div class="season-plant-card">
-                <div class="season-plant-cardgrid">
-                    <h3>Agapanthus africanus</h3>
-                    <p><span class="plant-common-name">Lirio del Nilo</span></p>
-                    <button>
-                        <img src="images/icons/add-plant-icon.png" alt="imagen para el botón de añadir planta a mi jardín" title="Haz clic para añadir esta planta a tu jardín.">
-                    </button>
-                </div>
-                
-                <img class="season-plant-image" src="images/Lirio del Nilo.png" alt="Planta de verano: Lirio del Nilo">
-                <p>Planta de verano con flores acampanadas de color lila, azul o blanco. Resiste bien el sol y se suele utilizar para embellecer aceras y jardines.</p>
-            </div>
+            <!--contenido de las plantas de estacion que sera anadidos por el main.js-->
         </div>
+        
         
     </main>
     

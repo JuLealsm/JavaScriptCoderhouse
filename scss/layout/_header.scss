@@ -23,11 +23,16 @@ header{
 
 }
 
-.button-login{
+.invisible-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.button-miJardin{
     @include transparent-button;
 
     img{
-        @include size (50px, 50px);
+        @include size (100px, 80px);
     }
 }
 
@@ -45,8 +50,15 @@ header{
     font-weight: 300;
 }
 
-.header-logo{
+.header-logo-index{
     @include size (400px, 480px);
+    display: block; 
+    margin: 0 auto; 
+    max-width: 100%;
+}
+
+.header-logo-pages{
+    @include size (60px, 70px);
     display: block; 
     margin: 0 auto; 
     max-width: 100%;

@@ -21,45 +21,57 @@ body{
 
 
 .season-plant-card{
-    @include flex-layout(column, center, center);
-    background-color: $darkGreen;
-    @include size (380px, 470px);
-    border-radius: 30px;
-    padding: 40px;
-    margin-top: 50px;
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2),  /* Sombra abaixo */
-}
-
-
-.season-plant-cardgrid{
+    position: relative;
     display: grid;
     justify-items: center;
     grid-template-columns: 2fr 1fr; 
     grid-template-rows: auto auto; 
+    @include size (400px, 490px);
+    padding: 10px 10px 30px;
+    margin-top: 50px;
+    border-radius: 30px;
+    border: 3px solid black;
+    background-color: $darkGreen;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.2);  /* Sombra abaixo */
 
     h3{
-        @include text-style (null, $white, background-color, center);
         grid-column: 1 / 2; 
-        grid-row: 1 / 2;    
-    }
+        grid-row: 1 / 2; 
+        @include text-style (null, $white, background-color, center);  
 
-    p{
-        font-weight: bold;
-        grid-column: 1 / 2; 
-        grid-row: 2 / 3;    
     }
 
     button{
-        grid-column: 2 / 3; 
-        grid-row: 1 / 3; 
+        grid-column: 2; 
+        grid-row: 1; 
         justify-self: end;
         @include transparent-button;
 
         img{
-            @include size (50px, 50px);
+            @include size (30px, 30px);
         }
         
     }
+}
+
+
+.season-plant-cardgrid{
+    grid-column: 1/3; 
+    grid-row: 2; 
+    justify-items: center;
+    padding: 10px;
+    background-color: $lightCream;
+    border: 2px solid $mediumGreen;
+    border-radius: 10px;
+
+    p{
+        color: $brown; 
+        
+        span{
+            font-weight: bold;
+        }
+    }
+
 }
 
 .season-plant-image{

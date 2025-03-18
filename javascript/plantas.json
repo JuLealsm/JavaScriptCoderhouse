@@ -1,0 +1,149 @@
+[
+    {
+    "nombre": "Helecho", 
+    "flores": "sinFlores", 
+    "tamano": "pequena", 
+    "toxica": "toxicaNo", 
+    "luzSolar": "sombra", 
+    "imagen": "../images/helecho.png", 
+    "descripcion": "Planta de hojas verdes y frondosas que crece bien en sombra y ambientes húmedos."
+    },
+    {
+    "nombre": "Calathea", 
+    "flores": "conFlores", 
+    "tamano": "pequena", 
+    "toxica": "toxicaNo", 
+    "luzSolar": "sombra", 
+    "imagen": "../images/calathea.png", 
+    "descripcion": "Planta ornamental con hojas coloridas que se enrollan por la noche."
+    },
+    {
+    "nombre": "Ficus", 
+    "flores": "conFlores", 
+    "tamano": "grande", 
+    "toxica": "toxicaSi", 
+    "luzSolar": "sombra", 
+    "imagen": "../images/ficus.png", 
+    "descripcion": "Árbol de interior con hojas brillantes, ideal para espacios amplios."
+    },
+    {
+    "nombre": "Camelia", 
+    "flores": "conFlores", 
+    "tamano": "grande", 
+    "toxica": "toxicaSi", 
+    "luzSolar": "sombra", 
+    "imagen": "../images/camelia.png", 
+    "descripcion": "Arbusto de flores vistosas que florece en invierno y primavera."
+    },
+    {
+    "nombre": "Peperomia", 
+    "flores": "conFlores", 
+    "tamano": "pequena", 
+    "toxica": "toxicaNo", 
+    "luzSolar": "sombra", 
+    "imagen": "../images/peperomia.png", 
+    "descripcion": "Planta compacta con hojas carnosas, fácil de cuidar en interiores."
+    },
+    {
+    "nombre": "Hierba Limon", 
+    "flores": "sinFlores", 
+    "tamano": "grande", 
+    "toxica": "toxicaSi", 
+    "luzSolar": "solPleno", 
+    "imagen": "../images/hierbaLimon.png", 
+    "descripcion": "Hierba aromática con aroma a limón, usada en cocina y tés."
+    },
+    {
+    "nombre": "Lavanda", 
+    "flores": "conFlores", 
+    "tamano": "grande", 
+    "toxica": "toxicaSi", 
+    "luzSolar": "solPleno", 
+    "imagen": "../images/lavender.png", 
+    "descripcion": "Planta aromática de flores moradas con propiedades relajantes."
+    },
+    {
+    "nombre": "Romero", 
+    "flores": "conFlores", 
+    "tamano": "pequena", 
+    "toxica": "toxicaNo", 
+    "luzSolar": "solPleno", 
+    "imagen": "../images/romero.png", 
+    "descripcion": "Hierba aromática de hojas estrechas, usada en cocina y medicina."
+    },
+    {
+    "nombre": "Girasol", 
+    "flores": "conFlores", 
+    "tamano": "pequena", 
+    "toxica": "toxicaNo", 
+    "luzSolar": "solPleno", 
+    "imagen": "../images/girasol.png", 
+    "descripcion": "Planta con flores grandes y amarillas que siguen la luz del sol."
+    },
+    {
+    "nombre": "Planta del Dinero", 
+    "flores": "sinFlores", 
+    "tamano": "pequena", 
+    "toxica": "toxicaNo", 
+    "luzSolar": "solPleno", 
+    "imagen": "../images/plantaDelDinero.png", 
+    "descripcion": "Planta de fácil cuidado, asociada con la buena suerte y prosperidad."
+    },
+    {
+    "nombre": "Magnolia", 
+    "flores": "conFlores", 
+    "tamano": "grande", 
+    "toxica": "toxicaNo", 
+    "luzSolar": "sombraParcial", 
+    "imagen": "../images/magnolia.png", 
+    "descripcion": "Planta con grandes flores aromáticas que florecen en primavera."
+    },
+    {
+    "nombre": "Begonia", 
+    "flores": "conFlores", 
+    "tamano": "pequena", 
+    "toxica": "toxicaSi", 
+    "luzSolar": "sombraParcial", 
+    "imagen": "../images/begonia.png",
+    "descripcion": "Planta ornamental con flores coloridas y hojas asimétricas."
+    },
+    {
+    "nombre": "Palma Areca", 
+    "flores": "sinFlores", 
+    "tamano": "grande", 
+    "toxica": "toxicaNo", 
+    "luzSolar": "sombraParcial", 
+    "imagen": "../images/palmaAreca.png", 
+    "descripcion": "Palma de interior con hojas alargadas, ideal para purificar el aire."
+    },
+    {
+    "nombre": "Hosta", 
+    "flores": "conFlores", 
+    "tamano": "pequena", 
+    "toxica": "toxicaSi", 
+    "luzSolar": "sombraParcial", 
+    "imagen": "../images/hosta.png", 
+    "descripcion": "Planta de sombra con hojas grandes y flores delicadas en verano."
+    },
+    {
+    "nombre": "Orquídea Mariposa", 
+    "flores": "conFlores", 
+    "tamano": "pequena", 
+    "toxica": "toxicaNo", 
+    "luzSolar": "sombraParcial", 
+    "imagen": "../images/orquideaMariposa.png", 
+    "descripcion": "Orquídea elegante con flores que parecen mariposas en vuelo."
+    },
+    {
+    "nombre": "Calathea orbifolia", 
+    "flores": "conFlores", 
+    "tamano": "pequena", 
+    "toxica": "toxicaNo", 
+    "luzSolar": "sombraParcial", 
+    "imagen": "../images/calatheaOrbifolia.png", 
+    "descripcion": "Planta con hojas grandes y redondeadas, ideal para interiores sombreados."
+    }
+]
+
+
+
