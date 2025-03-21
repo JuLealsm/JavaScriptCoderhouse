@@ -69,7 +69,7 @@ function displayPlantasVerano() {
             
         });
     });
-
+    // Add event listeners para los modales en index.html
     addPlantModalListeners();
 }
 
@@ -285,7 +285,7 @@ function simular() {
             </div>
         `).join("");
 
-        // Add event listeners para el boton "add-to-garden" con alerta de confirmacion
+        // Add event listeners para el boton "add-to-garden"
         document.querySelectorAll("#add-to-garden").forEach((btn) => {
             btn.addEventListener("click", () => {
                 const plant = btn.closest('.season-plant-card').querySelector('h3').textContent;
@@ -294,7 +294,7 @@ function simular() {
             });
         });
 
-        // Add event listeners para los modales
+        // Add event listeners para los modales en quiZ.html
         addPlantModalListeners();
     } else {
         exhibirResultado.innerHTML = `<p>No se encontró ninguna planta ideal para las selecciones. Intente otra vez con otra combinación de respuestas.</p>`;
@@ -311,8 +311,6 @@ function addToGarden(plant) {
         if (plantInfo) {
             garden.push(plantInfo);
             localStorage.setItem("miJardin", JSON.stringify(garden));
-
-            // Alerta de planta adicionada
             Toastify({
                 text: "🌱 La planta ha sido añadida a tu jardín!",
                 position: "right",
@@ -332,7 +330,6 @@ function addToGarden(plant) {
             }).showToast();
         }
     } else {
-        // Alerta de planta já existente
         Toastify({
             text: "⚠️ Esta planta ya se encuentra en tu jardín!",
             position: "right",
@@ -365,7 +362,6 @@ if (isGardenPage) {
         gardenContainer.innerHTML = "<p>No hay plantas en tu jardín todavía.</p>";
     } else {
         garden.forEach((savedPlant) => {
-            // Get fresh plant data from plantas array
             const plant = plantas.find(p => p.nombre === savedPlant.nombre) || savedPlant;
             
             const plantCard = document.createElement("div");
@@ -387,7 +383,6 @@ if (isGardenPage) {
             btn.addEventListener("click", () => {
                 const plantName = btn.closest('.season-plant-card').querySelector('h3').textContent;
 
-                // Remover la planta del jardín
                 garden = garden.filter((plant) => plant.nombre !== plantName);
                 localStorage.setItem("miJardin", JSON.stringify(garden));
 
@@ -422,7 +417,7 @@ if (isGardenPage) {
             });
         });
 
-        // Add event listeners para los modales
+        // Add event listeners para los modales en mi-jardin.html
         addPlantModalListeners();
     };
 } 
