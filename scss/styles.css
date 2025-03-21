@@ -94,6 +94,31 @@ header {
     border-radius: 0% 0% 60% 60%;
   }
 }
+.modalPersonalizado {
+  border-radius: 20px !important;
+  background-color: #E2CCB5 !important;
+  color: #333 !important;
+}
+
+.modalTitle {
+  color: #643814;
+  font-family: "Pacifico", serif;
+}
+
+.modalNombre {
+  color: #A15227;
+}
+
+.modalCaracteristicasTitle {
+  color: #643814;
+  margin-top: 20px;
+}
+
+.modalCaracteristicas {
+  color: #A15227;
+  font-size: 17px;
+}
+
 body {
   height: 100%;
   margin: 0;
@@ -162,6 +187,7 @@ body {
   background-color: #efe0d0;
   border: 2px solid #639127;
   border-radius: 10px;
+  cursor: pointer;
 }
 .season-plant-cardgrid p {
   color: #643814;
@@ -209,7 +235,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../images/miJardin-background.gif");
+  background-image: url("../images/mi-jardin-background.png");
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;

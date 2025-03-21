@@ -7,6 +7,7 @@
         "toxica": "toxicaNo",
         "luzSolar": "solPleno",
         "imagen": "../images/girasol.png",
+        "photo": "../images/realPhotos/girasol.jpg",
         "descripcion": "El girasol es una flor icónica del verano que sigue la luz del sol. Sus pétalos de color amarillo vibrante y su centro oscuro atraen a polinizadores como abejas y mariposas."
     },
     {
@@ -17,6 +18,7 @@
         "toxica": "toxicaNo",
         "luzSolar": "solPleno",
         "imagen": "../images/hibisco.png",
+        "photo": "../images/realPhotos/hibisco.png",
         "descripcion": "Arbusto tropical con flores grandes y coloridas que varían entre rojo, rosa, naranja y amarillo. Florece profusamente en verano y es popular en tés y decoraciones."
     },
     {
@@ -27,6 +29,7 @@
         "toxica": "toxicaSi",
         "luzSolar": "solPleno",
         "imagen": "../images/lavender.png",
+        "photo": "../images/realPhotos/lavanda.jpg",
         "descripcion": "La lavanda exuda un aroma relajante y sus flores lilas florecen en pleno verano. Muy utilizada en aceites esenciales, perfumes y decoración de jardines mediterráneos."
     },
     {
@@ -37,6 +40,7 @@
         "toxica": "toxicaNo",
         "luzSolar": "solPleno",
         "imagen": "../images/Bugambilia.png",
+        "photo": "../images/realPhotos/bugambilia.jpg",
         "descripcion": "Enredadera vibrante que llena paredes y cercas con colores como rosa, morado, naranja y blanco. Soporta bien el calor y aporta un toque tropical a los jardines."
     },
     {
@@ -46,7 +50,8 @@
         "tamano": "mediana",
         "toxica": "toxicaSi",
         "luzSolar": "solPleno",
-        "imagen": "../images/Flor de Mayo.png",
+        "imagen": "../images/florDeMayo.png",
+        "photo": "../images/realPhotos/flordemayo.jpg",
         "descripcion": "Sus flores fragantes y cerosas aparecen en verano y son comunes en los leis hawaianos. Sus colores varían entre blanco, rosa y amarillo."
     },
     {
@@ -56,7 +61,8 @@
         "tamano": "mediana",
         "toxica": "toxicaNo",
         "luzSolar": "solPleno",
-        "imagen": "../images/Lirio del Nilo.png",
+        "imagen": "../images/lirioDelNilo.png",
+        "photo": "../images/realPhotos/liriodelnilo.jpg",
         "descripcion": "Planta de verano con flores acampanadas de color lila, azul o blanco. Resiste bien el sol y se suele utilizar para embellecer aceras y jardines."
     }
 ]

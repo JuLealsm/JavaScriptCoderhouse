@@ -65,28 +65,50 @@ function displayPlantasVerano() {
     document.querySelectorAll("#add-to-garden").forEach((btn) => {
         btn.addEventListener("click", () => {
             const plant = btn.closest('.season-plant-card').querySelector('h3').textContent;
-            addToGarden(plant); //funcion para añadir la planta al jardin definida mas abajo (linea 301)
-            Toastify({
-                text: "🌱 La planta ha sido añadida a tu jardín!",
-                position: "right",
-                gravity: "top",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: false,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                style: {
-                    background: "#8A9743",
-                    color: "white",
-                    fontWeight: "bold"
-                },
-                offset: {
-                    x: 20,
-                    y: 20
-                }
-            }).showToast();
+            addToGarden(plant);
+            
+        });
+    });
+
+    addPlantModalListeners();
+}
+
+// Funcion reutilizable para crear modales de Sweet Alert para exhibir más informacion sobre la planta
+function addPlantModalListeners() {
+    document.querySelectorAll(".season-plant-cardgrid").forEach((card) => {
+        card.addEventListener("click", () => {
+            const plantCard = card.closest('.season-plant-card');
+            const plantName = plantCard.querySelector('h3').textContent;
+            const plant = plantas.find(p => p.nombre === plantName);
+            const caracteristicas = `
+                <p><strong class="modalCaracteristicas">Flores:</strong> ${plant.flores === "conFlores" ? "Sí 🌸" : "No ❌"}</p>
+                <p><strong class="modalCaracteristicas">Tamanho:</strong> ${plant.tamano === "pequena" ? "Pequeña 🌱" : "Grande 🌳"}</p>
+                <p><strong class="modalCaracteristicas">Tóxica:</strong> ${plant.toxica === "toxicaSi" ? "Sí ⚠️ (Cuidado con mascotas!)" : "No ✅"}</p>
+                <p><strong class="modalCaracteristicas">Luz Solar:</strong> ${plant.luzSolar === "sombra" ? "Prefiere sombra ☁️" : plant.luzSolar === "solPleno" ? "Precisa de sol pleno ☀️" :"Aprecia sombra parcial 🌤️"
+                }</p>
+            `;
+            
+            if (plant) {
+                Swal.fire({
+                    title: plant.nombreComun,
+                    html:  `
+                    <p><strong class="modalNombre">${plant.nombre}</strong></p>
+                    <p>${plant.descripcion}</p>
+                    <hr>
+                    <h3 class="modalCaracteristicasTitle"> Características🌿</h3>
+                    ${caracteristicas}
+                    `,
+                    imageUrl: plant.photo,
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    imageAlt: plant.nombreComun,
+                    confirmButtonColor: '#8A9743',
+                    customClass: {
+                        popup: "modalPersonalizado",
+                        title: "modalTitle"
+                    }
+                });
+            }
         });
     });
 }
@@ -267,31 +289,13 @@ function simular() {
         document.querySelectorAll("#add-to-garden").forEach((btn) => {
             btn.addEventListener("click", () => {
                 const plant = btn.closest('.season-plant-card').querySelector('h3').textContent;
-                addToGarden(plant); //funcion para añadir la planta al jardin definida mas abajo (linea 301)
-                Toastify({
-                    text: "🌱 La planta ha sido añadida a tu jardín!",
-                    position: "right",
-                    gravity: "top",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: false,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    style: {
-                        background: "#8A9743",
-                        color: "white",
-                        fontWeight: "bold"
-                    },
-                    offset: {
-                        x: 20,
-                        y: 20
-                    }
-                }).showToast();
+                addToGarden(plant);
+                
             });
         });
 
+        // Add event listeners para los modales
+        addPlantModalListeners();
     } else {
         exhibirResultado.innerHTML = `<p>No se encontró ninguna planta ideal para las selecciones. Intente otra vez con otra combinación de respuestas.</p>`;
     }
@@ -300,13 +304,56 @@ function simular() {
 // para salvar las plantas en el local storage
 function addToGarden(plant) {
     const garden = JSON.parse(localStorage.getItem("miJardin")) || [];
-    // Busca la planta en ambos arrays: plantas y plantasVerano
-    const plantInfo = plantas.find(p => p.nombre === plant) || plantasVerano.find(p => p.nombre === plant);
-    if (plantInfo) {
-        garden.push(plantInfo);
-        localStorage.setItem("miJardin", JSON.stringify(garden));
+    const plantExists = garden.some(p => p.nombre === plant);
+
+    if (!plantExists) {
+        const plantInfo = plantas.find(p => p.nombre === plant);
+        if (plantInfo) {
+            garden.push(plantInfo);
+            localStorage.setItem("miJardin", JSON.stringify(garden));
+
+            // Alerta de planta adicionada
+            Toastify({
+                text: "🌱 La planta ha sido añadida a tu jardín!",
+                position: "right",
+                gravity: "top",
+                duration: 5000,
+                close: true,
+                stopOnFocus: true,
+                style: {
+                    background: "#8A9743",
+                    color: "white",
+                    fontWeight: "bold"
+                },
+                offset: {
+                    x: 20,
+                    y: 20
+                }
+            }).showToast();
+        }
+    } else {
+        // Alerta de planta já existente
+        Toastify({
+            text: "⚠️ Esta planta ya se encuentra en tu jardín!",
+            position: "right",
+            gravity: "top",
+            duration: 5000,
+            close: true,
+            stopOnFocus: true,
+            style: {
+                background: "#D9534F", // Vermelho para destaque
+                color: "white",
+                fontWeight: "bold"
+            },
+            offset: {
+                x: 20,
+                y: 20
+            }
+        }).showToast();
     }
 }
+
+
 
 
 //*********************** MI JARDIN.HTML ***********************//
@@ -317,7 +364,10 @@ if (isGardenPage) {
     if (garden.length === 0) {
         gardenContainer.innerHTML = "<p>No hay plantas en tu jardín todavía.</p>";
     } else {
-        garden.forEach((plant) => {
+        garden.forEach((savedPlant) => {
+            // Get fresh plant data from plantas array
+            const plant = plantas.find(p => p.nombre === savedPlant.nombre) || savedPlant;
+            
             const plantCard = document.createElement("div");
             plantCard.classList.add("season-plant-card");
             plantCard.innerHTML = `
@@ -367,9 +417,12 @@ if (isGardenPage) {
                 }).showToast();
 
                 if (garden.length === 0) {
-                    gardenContainer.innerHTML = "<p>Tu jardín está vacío. Añade plantas para empezar a construir tu jardín.</p>";
+                    gardenContainer.innerHTML = "<p>Tu jardín está vacío. Añade plantas para empezar a construirlo.</p>";
                 }
             });
         });
-    }
-}
+
+        // Add event listeners para los modales
+        addPlantModalListeners();
+    };
+} 
